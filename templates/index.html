@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedicoNexa- Online Pharmacy & Doctor Appointments</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-top" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; ">
+            <div class="logo" style="display: flex; align-items: center; gap: 1rem;">
+                <!-- <i class="fas fa-medkit medkiticon"></i> -->
+
+                <!-- WITH LOGO only -->
+                <!-- <img src="/images/logo_border.png" alt="" height="2em" max-width="2rem">
+                <h1 style="margin: 0; font-size: 2.2rem; font-weight: 650; letter-spacing: 2px;font-family: Verdana, Geneva, Tahoma, sans-serif;">Shiv Pharmacy</h1> -->
+
+                <a href="#home" class="nav-link active" data-target="home"><img src="/images/logo_borderwhite1.png"
+                        alt="SHIV Pharmacy"></a>
+            </div>
+
+            <div class="search-bar" style="margin-bottom: 2rem;align-items: center;align-content: center;">
+                <input type="text" id="product-search-input" placeholder="Search for medicines, health products...">
+                <a href="#products" class="nav-link" data-target="products">
+                <button id="product-search-btn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                <button id="clear-search-btn" class="btn btn-secondary hidden"><i class="fas fa-times"></i></button></a>
+            </div>
+            <div class="user-actions" style="display: flex; align-items: center; gap: 1rem;">
+
+                <div class="cart-icon nav-link" data-target="cart">
+                    <a href="#cart" class="cart-icon">🛒</a>
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
+                <button id="login-signup-btn" class="btn btn-secondary"> Login </button>
+                <button id="theme-toggle-btn" class="btn btn-outline" title="Toggle Theme"
+                    style="font-size: 1.3rem; padding: 8px 12px;color:var(--text-color); box-shadow:var(--secondary-color);">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <div class="hamburger-menu nav-link">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>zz
+        </div>
+        <!-- <nav class="main-nav">
+    <ul>
+        <li><a href="#home" class="nav-link active" data-target="home"><i class="fas fa-home"></i><br> Home </a></li>
+        <li><a href="#products" class="nav-link" data-target="products"><i class="fas fa-pills"></i><br>
+                Medicines/Products </a></li>
+        <li><a href="#appointments" class="nav-link" data-target="appointments"><i class="fas fa-user"></i><br> Consult
+                Doctor </a></li>
+        <li><a href="#lab-tests" class="nav-link" data-target="lab-tests"><i class="fas fa-vials"></i><br> Lab Tests
+            </a></li>
+        <li><a href="#prescriptions" class="nav-link" data-target="prescriptions"><i
+                    class="fas fa-file-prescription"></i><br> Upload Prescription </a></li>
+    </ul>
+</nav> -->
+    </header>
+
+    <main>
+        <section id="home" class="active-section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h2>Your Health, Our Priority.</h2>
+                    <p>Order medicines online, consult doctors, and manage your health from the comfort of your home.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-outline nav-link" data-target="products"><a href="#products">Order Now <i
+                                    class="fas fa-calendar-alt"></i></a></button>
+                        <button class="btn btn-outline nav-link" data-target="appointments"><a href="#appointments">
+                                Consult a Doctor <i class="fas fa-calendar-alt"></i>
+                            </a></button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-carousel">
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Raja Krishnappa Beriya.jpg"
+                                alt="Dr. Raja Krishnappa Beria" onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. Raja Krishnappa Beria<br><span
+                                    class="carousel-designation">Orthopedic</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Tapanshu.jpg" alt="Dr. Tapanshu"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr.Tapanshu <br><span class="carousel-designation">Othopadic
+                                    Surgeon</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Pragati Sharma.png" alt="Dr. P. Sharma"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. P. Sharma<br><span
+                                    class="carousel-designation">Cardiologist</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Avi Gupta.jpg" alt="Dr. Avi Gupta"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. Avi Gupta<br><span class="carousel-designation">General
+                                    Surgeon</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Uttam.jpg" alt="Dr. Uttam Kumar"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. Uttam Kumar<br><span
+                                    class="carousel-designation">Pediatrician</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Mukul Kumar.jpg" alt="Dr. Mukul Kumar"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. Mukul Kumar<br><span
+                                    class="carousel-designation">Dietition</span></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="carousel-img" src="/images/doctor/Sanyam.jpg" alt="Dr. Sanyam Mittal"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="carousel-caption">Dr. Sanyam Mittal<br><span
+                                    class="carousel-designation">Radiologist</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="category-carousel" class="category-section">
+                <div class="category-header">
+                    <h2>Shop by Category</h2>
+                                    <button class="nav-link" data-target="products" style="color:var(--primary-color);background: none;border-color:var(--white);">
+                                        See all
+                                    </button>
+                </div>
+                <div class="category-scroll"
+                    style="display: flex; overflow-x: auto; white-space: nowrap; gap: 1.2rem; padding-bottom: 10px; scrollbar-width: none;">
+                    <template id="tplCategory">
+                        <a class="category-card grid"
+                            style="display: inline-block; min-width: 120px; max-width: 160px; margin-right: 10px; vertical-align: top;">
+                            <div class="category-icon"></div>
+                            <div class="category-name"></div>
+                            <div class="category-offer"></div>
+                        </a>
+                    </template>
+                    <div id="categoryTrack" class="category-track"
+                        style="display: flex; flex-direction: row; gap: 1.2rem; white-space: nowrap;"></div>
+                </div>
+            </section>
+
+
+            <h1 id="adds">HELLO
+                ADVERTISEMENT</h1>
+            <section id="function">
+                <button class="btn btn-primary nav-link" data-target="appointments">
+                    <div><i class="fas fa-user-md"></i></div>
+                    <div>Consult Doctors</div>
+                </button>
+                <button class="btn btn-primary nav-link" data-target="products">
+                    <i class="fas fa-pills"></i><br> Your Medicines
+                </button>
+                <button class="btn btn-primary nav-link" data-target="lab-tests">
+                    <i class="fas fa-vials"></i><br> Book Lab Test
+                </button>
+                <button class="btn btn-primary nav-link" data-target="prescriptions">
+                    <i class="fas fa-file-prescription"></i><br> Upload Prescription
+                </button>
+            </section>
+            <div class="section-title" id="featured-section-title" style="display:none;">
+                <h2>Featured Products</h2>
+                <p>Top picks for your health needs.</p>
+            </div>
+            <div id="featured-products-grid" class="product-grid" style="display:none;"></div>
+            <section id="medicine-carousel" class="medicine-section">
+                <div class="medicine-header">
+                    <h2>Medicines</h2>
+                    <a href="#products" class="see-all-link">See all</a>
+                </div>
+                <div class="medicine-scroll"
+                    style="display: flex; overflow-x: auto; white-space: nowrap; gap: 1.2rem; padding-bottom: 10px; scrollbar-width: none;">
+                    <template id="tplmedicine">
+                        <a class="medicine-card grid"
+                            style="display: inline-block; min-width: 120px; max-width: 160px; margin-right: 10px; vertical-align: top;">
+                            <div class="medicine-icon"></div>
+                            <div class="medicine-name"></div>
+                            <div class="medicine-offer"></div>
+                        </a>
+                    </template>
+                    <div id="medicineTrack" class="medicine-track"
+                        style="display: flex; flex-direction: row; gap: 1.2rem; white-space: nowrap;"></div>
+                </div>
+            </section>
+        </section>
+
+        <section id="products" class="hidden-section">
+            <div class="section-title" style="display: flex; align-items: flex-end; justify-content: space-between;">
+                <div>
+                    <h2>All Products</h2>
+                    <p>Explore our wide range of medicines and health products.</p>
+                </div>
+                <div class="trending-products-carousel-container" style="margin: 0; padding: 0;">
+                    <div class="trending-products-carousel"
+                        style="border: 2px solid #e0e0e0; background: #fafafa; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                        <div class="trending-carousel-item">
+                            <img class="trending-carousel-img" src="/images/antacid.png" alt="Antacid"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="trending-carousel-caption">Antacid<br><span class="carousel-usage">Relieves
+                                    acidity</span><br><span class="carousel-price">₹50</span></div>
+                        </div>
+                        <div class="trending-carousel-item">
+                            <img class="trending-carousel-img" src="/images/bandage.png" alt="Bandage"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="trending-carousel-caption">Bandage<br><span class="carousel-usage">Wound
+                                    protection</span><br><span class="carousel-price">₹30</span></div>
+                        </div>
+                        <div class="trending-carousel-item">
+                            <img class="trending-carousel-img" src="/images/Paracetamol.png" alt="Paracetamol"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="trending-carousel-caption">Paracetamol<br><span class="carousel-usage">Fever &
+                                    pain
+                                    relief</span><br><span class="carousel-price">₹20</span></div>
+                        </div>
+                        <div class="trending-carousel-item">
+                            <img class="trending-carousel-img" src="/images/Sanitizer.png" alt="Sanitizer"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="trending-carousel-caption">Sanitizer<br><span class="carousel-usage">Hand
+                                    hygiene</span><br><span class="carousel-price">₹60</span></div>
+                        </div>
+                        <div class="trending-carousel-item">
+                            <img class="trending-carousel-img" src="/images/Thermometer.png" alt="Thermometer"
+                                onerror="this.onerror=null;this.src='images/logo.jpg';">
+                            <div class="trending-carousel-caption">Thermometer<br><span
+                                    class="carousel-usage">Temperature
+                                    check</span><br><span class="carousel-price">₹120</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-bar" style="margin-bottom: 2rem;">
+                <input type="text" id="product-search-input" placeholder="Search for medicines, health products...">
+                <button id="product-search-btn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                <button id="clear-search-btn" class="btn btn-secondary hidden"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div id="all-products-grid" class="product-grid"></div>
+        </section>
+
+        <section id="appointments" class="hidden-section">
+            <div class="section-title">
+                <h2>Book an Appointment</h2>
+                <p>Connect with experienced doctors online or in-clinic.</p>
+            </div>
+            <!-- Add Search Bar -->
+            <div class="search-bar" style="margin-bottom: 2rem;">
+                <input type="text" id="doctor-search-input" placeholder="Search for doctors...">
+                <button id="doctor-search-btn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                <button id="clear-doctor-search-btn" class="btn btn-secondary hidden"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="appointment-container">
+                <div class="appointment-form card" id="appointment-card">
+                    <h3>Appointment Details</h3>
+                    <div class="form-group">
+                        <label for="patient-name">Patient Name:</label>
+                        <input type="text" id="patient-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization-select">Specialization:</label>
+                        <select id="specialization-select" required>
+                            <option value="">-- Select Specialization --</option>
+                            <option value="General Physician">General Physician</option>
+                            <option value="Cardiologist">Cardiologist</option>
+                            <option value="Dermatologist">Dermatologist</option>
+                            <option value="Pediatrician">Pediatrician</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctor-select">Doctor:</label>
+                        <select id="doctor-select" required>
+                            <option value="">-- Select Doctor --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-medium">Appointment Medium:</label>
+                        <select id="appointment-medium" required>
+                            <option value="">-- Select Medium --</option>
+                            <option value="Video Call">Video Call</option>
+                            <option value="In-Clinic">In-Clinic Visit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointment-date">Select Date:</label>
+                        <input type="date" id="appointment-date" required>
+                    </div>
+                    <div class="form-group time-slots-group">
+                        <label>Available Time Slots:</label>
+                        <div id="time-slots" class="time-slots-grid">
+                            <p class="empty-state-small">Select a date and doctor to see available slots.</p>
+                        </div>
+                    </div>
+
+                    <div class="identity-verification-step card" id="verification-step">
+                        <h4>Identity Verification (for booking)</h4>
+                        <div class="form-group">
+                            <label for="contact-input">Email or Phone:</label>
+                            <div class="otp-input-container">
+                                <input type="text" id="contact-input" placeholder="Enter email or phone" required>
+                                <button id="send-otp-btn" class="btn btn-secondary btn-small">Send OTP</button>
+                            </div>
+                        </div>
+                        <div class="form-group otp-input-group hidden" id="otp-input-group">
+                            <label for="otp-input">Enter OTP:</label>
+                            <div class="otp-input-container">
+                                <input type="text" id="otp-input" placeholder="Enter 6-digit OTP" maxlength="6"
+                                    required>
+                                <button id="verify-otp-btn" class="btn btn-primary btn-small">Verify OTP</button>
+                            </div>
+                        </div>
+                        <p id="otp-message" class="otp-message"></p>
+                    </div>
+
+                    <button id="book-appointment-btn" class="btn btn-primary" disabled>Book Appointment</button>
+                </div>
+
+                <div class="appointment-list-card card">
+                    <h3>My Appointments</h3>
+                    <div id="appointment-list" class="appointment-list">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lab-tests" class="hidden-section">
+            <div class="section-title">
+                <h2>Lab Tests</h2>
+                <p>Book from a wide range of diagnostic lab tests for your health needs.</p>
+            </div>
+            <!-- Add Search Bar -->
+            <div class="search-bar" style="margin-bottom: 2rem;">
+                <input type="text" id="lab-test-search-input" placeholder="Search for lab tests...">
+                <button id="lab-test-search-btn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                <button id="clear-lab-test-search-btn" class="btn btn-secondary hidden"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="lab-tests-container card">
+                <div class="lab-tests-grid" id="lab-tests-grid">
+
+                    <div class="lab-test-card">
+                        <h4>Complete Blood Count (CBC)</h4>
+                        <p>Measures different components of blood to detect disorders.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Blood Sugar (Fasting/PP)</h4>
+                        <p>Checks glucose levels for diabetes diagnosis.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Lipid Profile</h4>
+                        <p>Assesses cholesterol and triglyceride levels.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Liver Function Test (LFT)</h4>
+                        <p>Evaluates liver health and function.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Kidney Function Test (KFT)</h4>
+                        <p>Checks kidney health and filtration rate.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Thyroid Profile (T3, T4, TSH)</h4>
+                        <p>Measures thyroid hormone levels.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Urine Routine & Microscopy</h4>
+                        <p>Detects infections and kidney issues.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>Vitamin D Test</h4>
+                        <p>Checks vitamin D levels for bone health.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>COVID-19 RT-PCR</h4>
+                        <p>Detects active coronavirus infection.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                    <div class="lab-test-card">
+                        <h4>HbA1c (Glycated Hemoglobin)</h4>
+                        <p>Monitors long-term blood sugar control.</p>
+                        <button class="btn btn-primary">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prescriptions" class="hidden-section">
+            <div class="section-title">
+                <h2>Upload Prescription</h2>
+                <p>Securely upload your prescriptions for easy order processing.</p>
+            </div>
+            <div class="prescription-container">
+                <div class="upload-area card" id="prescription-upload-area">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <p>Drag & Drop your prescription here</p>
+                    <p>or</p>
+                    <input type="file" id="prescription-file-input" accept="image/jpeg,image/png,application/pdf"
+                        hidden>
+                    <button id="choose-file-btn" class="btn btn-outline"><i class="fas fa-folder-open"></i> Choose
+                        File</button>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="upload-progress-bar"></div>
+                    </div>
+                    <small>Accepted formats: JPG, PNG, PDF (Max 5MB)</small>
+                </div>
+                <div class="uploaded-prescriptions card">
+                    <h3>My Prescriptions</h3>
+                    <div id="prescription-list" class="prescription-list">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="hidden-section">
+            <div class="section-title">
+                <h2>Your Shopping Cart</h2>
+                <p>Review your selected items before checkout.</p>
+            </div>
+            <div class="cart-summary-container">
+                <div class="cart-items-list card">
+                    <h3>Items in your Cart</h3>
+                    <div id="cart-items" class="cart-items">
+                    </div>
+                </div>
+                <div class="cart-total-card card">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-row delivery-charge">
+                        <span>Delivery Charge:</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="summary-row total-amount">
+                        <span>Total:</span>
+                        <span id="cart-total">₹0.00</span>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-primary" disabled><i class="fas fa-cash-register"></i>
+                        Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="hidden-section">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We're here to help! Reach out to us for any queries.</p>
+            </div>
+            <div class="contact-container card">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> MedicoNexa Headquarters, Charthawal, Uttar Pradesh, India
+                    </p>
+                    <p><i class="fas fa-phone-alt"></i> +91-9876543210</p>
+                    <p><i class="fas fa-envelope"></i> support@mediconexa.com</p>
+                    <p><i class="fas fa-clock"></i> Mon - Sat: 9 AM to 8 PM</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <div class="form-group">
+                        <label for="contact-name">Your Name:</label>
+                        <input type="text" id="contact-name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Your Email:</label>
+                        <input type="email" id="contact-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject:</label>
+                        <input type="text" id="contact-subject" placeholder="Subject of your message" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message:</label>
+                        <textarea id="contact-message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send
+                        Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Shop by Category Carousel 
+         <section id="medicine-carousel" class="medicine-section">
+                <div class="medicine-header">
+                    <h2>Shop by medicine</h2>
+                    <a href="#products" class="see-all-link">See all</a>
+                </div>
+                <div class="medicine-scroll"
+                    style="display: flex; overflow-x: auto; white-space: nowrap; gap: 1.2rem; padding-bottom: 10px; scrollbar-width: thin;">
+                    <template id="tplmedicine">
+                        <a class="medicine-card grid"
+                            style="display: inline-block; min-width: 120px; max-width: 160px; margin-right: 10px; vertical-align: top;">
+                            <div class="medicine-icon"></div>
+                            <div class="medicine-name"></div>
+                            <div class="medicine-offer"></div>
+                        </a>
+                    </template>
+                    <div id="medicineTrack" class="medicine-track"
+                        style="display: flex; flex-direction: row; gap: 1.2rem; white-space: nowrap;"></div>
+                </div>
+            </section> -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>MedicoNexa</h3>
+                <p>Your trusted online pharmacy and healthcare partner. Providing convenient access to medicines and
+                    expert consultations.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Medicines</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#prescriptions">Prescriptions</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Charthawal, UP, India</p>
+                <p><i class="fas fa-phone-alt"></i> +91-9876543210</p>
+                <p><i class="fas fa-envelope"></i> info@mediconexa.com</p>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Stay updated with our latest offers and health tips.</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MedicoNexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Signup</button>
+            </div>
+            <div id="login-panel" class="tab-panel">
+                <h3>Login to MedicoNexa</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div id="signup-panel" class="tab-panel hidden">
+                <h3>Create Account</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name:</label>
+                        <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email:</label>
+                        <!-- <input type="email" id="signup-email" placeholder="Enter your email" required> -->
+                    </div>
+                    <div class="identity-verification-step card" id="verification-step">
+                        <h4>Identity Verification (for booking)</h4>
+                        <div class="form-group">
+                            <label for="contact-input signup-email">Email or Phone:</label>
+                            <div class="otp-input-container">
+                                <input type="text" id="contact-input" placeholder="Enter email or phone" required>
+                                <button id="send-otp-btn" class="btn btn-secondary btn-small">Send OTP</button>
+                            </div>
+                        </div>
+                        <div class="form-group otp-input-group hidden" id="otp-input-group">
+                            <label for="otp-input">Enter OTP:</label>
+                            <div class="otp-input-container">
+                                <input type="text" id="otp-input" placeholder="Enter 6-digit OTP" maxlength="6"
+                                    required>
+                                <button id="verify-otp-btn" class="btn btn-primary btn-small">Verify OTP</button>
+                            </div>
+                        </div>
+                        <p id="otp-message" class="otp-message"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password:</label>
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm your password"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        // Theme adjustment functionality
+        function setTheme(mode) {
+            if (mode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        function autoTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+        }
+        // Initial theme setup
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            autoTheme();
+        }
+        // Toggle theme on button click
+        document.getElementById('theme-toggle-btn').addEventListener('click', function () {
+            const current = document.documentElement.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', autoTheme);
+
+
+    </script>
+</body>
+
+</html>
